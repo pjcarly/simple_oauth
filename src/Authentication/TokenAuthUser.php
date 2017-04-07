@@ -827,4 +827,21 @@ class TokenAuthUser implements TokenAuthUserInterface {
     return $this->subject->isNewTranslation();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getLoadedRevisionId() {
+    return null;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function updateLoadedRevisionId() {
+
+  }
+
+
+
+
 }
