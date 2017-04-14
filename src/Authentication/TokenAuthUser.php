@@ -840,8 +840,4 @@ class TokenAuthUser implements TokenAuthUserInterface {
   public function updateLoadedRevisionId() {
 
   }
-
-
-
-
 }
