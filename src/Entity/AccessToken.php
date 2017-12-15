@@ -437,6 +437,9 @@ class AccessToken extends ContentEntityBase implements AccessTokenInterface {
       return NULL;
     }
 
+    // Find / generate the access token for this refresh token.
+    $access_token = $this->get('access_token_id')->entity;
+
     $values = [
       'expire' => static::defaultExpiration(),
       'user_id' => $this->get('user_id')->target_id,
