@@ -7,6 +7,7 @@
 
 namespace Drupal\simple_oauth\Authentication;
 
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -839,5 +840,48 @@ class TokenAuthUser implements TokenAuthUserInterface {
    */
   public function updateLoadedRevisionId() {
 
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isLatestTranslationAffectedRevision() {
+    return $this->subject->isLatestTranslationAffectedRevision();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isRevisionTranslationAffectedEnforced() {
+    return $this->subject->isRevisionTranslationAffectedEnforced();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setRevisionTranslationAffectedEnforced($enforced) {
+    $this->subject->setRevisionTranslationAffectedEnforced($enforced);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isDefaultTranslationAffectedOnly() {
+    return $this->subject->isDefaultTranslationAffectedOnly();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function wasDefaultRevision() {
+    return $this->subject->wasDefaultRevision();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isLatestRevision() {
+    return $this->subject->isLatestRevision();
   }
 }
